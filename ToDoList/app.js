@@ -1,3 +1,6 @@
+// OBS: Este código não é procedural
+
+
 //classe que cria o bjeto tarefas
 class Task {
     //metodo construtor com parametros
@@ -28,34 +31,48 @@ class Task {
 
 
 
-//esta classe faz o papel do back end, contem as operaçoes do crud
+//esta classe faz o papel do back end, contem as operaçoes do crud e cria o banco de dados do zero
 class Database {
     constructor(){
         this.initDatabase()
     }
 
     initDatabase(){
-        const id = localStorage.getItem('id');
+
 
         if(id === null){
             localStorage.setItem('id', '0');
 
         }
+        
+        let id = localStorage.getItem('id');
     }
 
 
     loadTRasks(){}
 
     createTask(task){
-            //converte o objeto de dados javascript em um objeto JSON
-            localStorage.setItem(JSON.stringify(task));
+        //chama o metodo getNextid e atribui o retorno  a variavel id
+        let id = this.getNextId();
+        //cria um objeto chave/valor no localstorage. "id": "task(json)" 
+        localStorage.setItem(id, JSON.stringify(task));
+        //cria um objeto chave/valor no localstorage. "id": "id(json)" 
+        localStorage.setItem('id', id.toString());
           
     }
 
     removeTask(id){}
 
     searchTasks(Task){}
+
+    getNextId(){
+        let currentId = localStorage.getItem('id');
+
+        return parseInt(currentId) + 1;
+    }
 }
+
+
 
 //objeto de database onde é gerenciado o crud
 const database =  new Database();
