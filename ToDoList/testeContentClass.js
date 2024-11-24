@@ -7,3 +7,5 @@ const meyCar = {
 }
 
 meyCar.logColor();
+
+
