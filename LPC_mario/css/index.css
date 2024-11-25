@@ -22,6 +22,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: stretch;
+    /* position: absolute; */
 }
 
 nav{
@@ -33,7 +34,8 @@ nav{
     align-items: stretch;
     flex-wrap: nowrap;
     padding: 0px;
-    background-color: rgb(34, 143, 143);
+    background-color: transparent;
+    border: 1px solid rgba(255,255, 255, 0.5);
     z-index: 1;
     overflow: hidden;
 
@@ -68,26 +70,55 @@ ul{
     overflow: hidden;
 }
 
+.linkSwitch{
+    font-size:1.2em;
+    text-decoration: none;
+}
+
 #searchAndButton{
-    max-width: 325px;
-    min-width: 325px;
+    max-width: 500px;
+    min-width: 20%;
+    padding: 0 20px 0 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    
+    
     
 }
 
 #searchAndButton input{
-    width: 50%;
-    max-height:50px;
-    min-height: 30px;
+    width: 30%;
+    max-height:50%;
+    min-height:30px;
     margin: 10px;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid rgba(255,255, 255, 0.5);
+    outline: none;
+    border-radius: 4px;
+    padding: 0 10px 0 5px;
+    transition: transform 0.8s ease, width 0.8s ease;
+    transform-origin:left;
 }
 
 #searchAndButton button{
-    width: 50%;
+    width: 25%;
+    max-width: 30%;
     max-height: 50px;
     min-height: 30px;
     margin: 10px;
+    margin: 10px;
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid rgba(255,255, 255, 0.5);
+    outline: none;
+    border-radius: 4px;
+    padding: 0 10px 0 5px;
 
+}
+
+#searchAndButton input:hover{
+    width: 300px;
+    
 }
