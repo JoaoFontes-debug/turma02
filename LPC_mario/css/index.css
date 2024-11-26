@@ -22,7 +22,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: stretch;
-    /* position: absolute; */
+    position: absolute;
 }
 
 nav{
@@ -68,11 +68,15 @@ ul{
     flex-direction: row;
     gap: 50px;
     overflow: hidden;
+    list-style: none;
 }
 
 .linkSwitch{
     font-size:1.2em;
+    font-weight:lighter;
     text-decoration: none;
+    color: #ffffff; 
+  
 }
 
 #searchAndButton{
@@ -120,5 +124,57 @@ ul{
 
 #searchAndButton input:hover{
     width: 300px;
+    
+}
+
+#searchAndButton input::placeholder{
+    color: #ffffff; 
+    text-transform: uppercase; 
+    transform: translateX(5px);  
+    font-weight: 300;
+
+}
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+}
+
+.swiper .swiper-wrapper{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+   
+   
+   
+}
+
+.swiper .swiper-wrapper .swiper-slide {
+    width: 100%;
+    height: 100%;
+   
+   
+}
+
+.swiper .swiper-wrapper .swiper-slide ::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    
+}
+
+.swiper .swiper-wrapper .swiper-slide img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position:center ;
+    
     
 }
